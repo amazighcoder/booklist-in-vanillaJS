@@ -1,1 +1,1 @@
-# booklist in vanilla javascript
+# A from to list books in vanilla javascript & tailwind css
