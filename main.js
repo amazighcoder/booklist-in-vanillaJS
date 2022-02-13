@@ -83,12 +83,18 @@ class Store {
 
   static removeBook(isbn) {
     const books = Store.getBooks();
-    books.forEach(function (book, index) {
-      if (book.isbn === isbn) {
-        books.splice(index, 1);
-      }
-    });
-    localStorage.setItem("books", JSON.stringify(books));
+
+    // Using forEach and splice
+    // books.forEach(function (book, index) {
+    //   if (book.isbn === isbn) {
+    //     books.splice(index, 1);
+    //   }
+    // });
+    //localStorage.setItem("books", JSON.stringify(books));
+
+    // Using filter
+    const newListOfBooks = books.filter((book) => book.isbn !== isbn);
+    localStorage.setItem("books", JSON.stringify(newListOfBooks));
   }
 }
 // Event: displays books
